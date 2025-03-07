@@ -1,0 +1,160 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.wrapper {
+    display: grid;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+}
+
+.admin-portal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #007ACC, #00bcd4); /* Samma gradient som inloggningen */
+}
+
+.admin-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 1200px; /* Bredare container för tabellen */
+    text-align: center;
+}
+
+    .admin-container h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+        color: #333;
+        font-weight: bold;
+    }
+
+.bookings-table {
+    overflow-x: auto; /* Gör tabellen responsiv */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+    table th, table td {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #f9f9f9;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    table td {
+        font-size: 16px;
+        color: #555;
+    }
+
+/* Knappar för åtgärder */
+.edit-button, .delete-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-button {
+    background-color: #007ACC;
+    color: white;
+    margin-right: 10px;
+}
+
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #005f99;
+    transform: translateY(-2px);
+}
+
+.delete-button:hover {
+    background-color: #e60000;
+    transform: translateY(-2px);
+}
+
+
+
+@media (max-width: 1024px) {
+    .admin-container {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    table th, table td {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .edit-button, .delete-button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+    tr {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        padding-left: 10px;
+        padding-right: 50%;
+        text-align: left;
+    }
+
+        td:before {
+            content: attr(data-label);
+            position: absolute;
+            right: 10px;
+            width: 45%;
+            padding-left: 10px;
+            white-space: nowrap;
+            text-align: right;
+            font-weight: bold;
+            color: #333;
+        }
+
+    .edit-button, .delete-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

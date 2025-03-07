@@ -1,0 +1,60 @@
+﻿@model Yrkesforarutbildning.Models.OfferModel
+
+<main>
+    <section class="offer-section">
+        <div class="offer-container">
+            <h2>Begär Offert</h2>
+            
+            <form class="offer-form" asp-controller="Product" asp-action="Offer" method="post">
+
+                <div class="form-group">
+                    <label asp-for="@Model.SelectedService"> <p>Vald tjänst</p> </label>
+                    <input type="text" id="selected-service" name="selected-service" asp-for="SelectedService" readonly>
+                </div>
+                
+
+                <div class="form-group name-group">
+                    <div class="name-field">
+                        <label asp-for="@Model.FirstName"> <p>Förnamn</p> </label>
+                        <input asp-for="@Model.FirstName" type="text" id="first-name" name="first-name" placeholder="Ange ditt förnamn">
+                        <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="name-field">
+                        <label asp-for="@Model.LastName"> <p>Efternamn</p> </label>
+                        <input asp-for="@Model.LastName" type="text" id="last-name" name="last-name" placeholder="Ange ditt efternamn">
+                        <span asp-validation-for="@Model.LastName" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="@Model.OrgNumber"> <p>Organisationsnummer / Personnummer</p> </label>
+                    <input asp-for="@Model.OrgNumber" type="text" id="id-number" name="id-number" placeholder="Ange organisationsnummer eller personnummer">
+                    <span asp-validation-for="@Model.OrgNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@Model.Address"> <p>Adress för utbildning</p> </label>
+                    <input asp-for="@Model.Address" type="text" id="address" name="address" placeholder="Ange adress där utbildningen ska hållas">
+                    <span asp-validation-for="@Model.Address" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@Model.Email"> <p>E-postadress</p> </label>
+                    <input asp-for="@Model.Email" type="email" id="email" name="email" placeholder="Ange din e-postadress">
+                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@Model.PhoneNumber"> <p>Telefonnummer</p> </label>
+                    <input asp-for="@Model.PhoneNumber" type="tel" id="phone" name="phone" placeholder="Ange ditt telefonnummer">
+                    <span asp-validation-for="@Model.PhoneNumber" class="text-danger"></span>
+                </div>
+
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <button type="submit" class="submit-button">Skicka förfrågan</button>
+            </form>
+        </div>
+    </section>
+</main>

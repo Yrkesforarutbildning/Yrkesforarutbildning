@@ -1,0 +1,98 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: grid;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+}
+
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; /* Tar upp större del av skärmen */
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #007ACC, #00bcd4); /* Gradientbakgrund */
+}
+
+.login-container {
+    background-color: white;
+    padding: 60px 40px; /* Större padding */
+    border-radius: 20px; /* Rundade hörn */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Djupare skugga */
+    width: 100%;
+    max-width: 500px; /* Bredare container */
+    text-align: center;
+}
+
+    .login-container h2 {
+        font-size: 32px; /* Större rubrik */
+        margin-bottom: 30px;
+        color: #333;
+        font-weight: bold;
+    }
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Mer utrymme mellan fält */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+    .form-group p {
+        font-weight: bold;
+    }
+
+    .form-group label {
+        font-size: 18px; /* Större etiketter */
+        color: #555;
+        font-weight: 500;
+    }
+
+    .form-group input {
+        padding: 15px; /* Större input-fält */
+        border: 2px solid #ddd; /* Tjockare ram */
+        border-radius: 10px; /* Rundade hörn */
+        font-size: 18px; /* Större text */
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .form-group input:focus {
+            border-color: #007ACC; /* Fokusfärg */
+            box-shadow: 0 0 10px rgba(0, 122, 204, 0.3); /* Glow-effekt */
+        }
+
+.login-button {
+    padding: 15px;
+    background: linear-gradient(135deg, #007ACC, #00bcd4); /* Gradientknapp */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px; /* Större text */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .login-button:hover {
+        transform: translateY(-3px); /* Lyft-effekt */
+        box-shadow: 0 5px 15px rgba(0, 122, 204, 0.3); /* Skugga vid hover */
+        background: #FFA500;
+    }
+
+    .login-button:active {
+        transform: translateY(0); /* Återställ vid klick */
+    }

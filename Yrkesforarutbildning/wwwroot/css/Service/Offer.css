@@ -1,0 +1,138 @@
+﻿.offer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 130vh;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #007ACC, #00bcd4);
+}
+
+.offer-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    
+}
+
+    .offer-container h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+        color: #333;
+        font-weight: bold;
+    }
+
+.offer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+    .form-group p {
+        font-weight: bold;
+    }
+
+/* Namn och efternamn (höger om varandra) */
+.name-group {
+    display: flex;
+    gap: 20px; /* Mellanrum mellan förnamn och efternamn */
+}
+
+.name-field {
+    flex: 1; /* Båda fälten tar lika mycket plats */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .form-group input:focus,
+    .form-group select:focus {
+        border-color: #007ACC;
+        box-shadow: 0 0 10px rgba(0, 122, 204, 0.3);
+    }
+
+    /* Låst val (read-only) för vald tjänst */
+    .form-group input[readonly] {
+        background-color: #f9f9f9;
+        border-color: #ccc;
+        cursor: not-allowed;
+    }
+
+.submit-button {
+    padding: 15px;
+    background: linear-gradient(135deg, #007ACC, #00bcd4);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .submit-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 122, 204, 0.3);
+        background: #FFA500;
+    }
+
+    .submit-button:active {
+        transform: translateY(0);
+    }
+
+
+/* Media Query för mindre skärmar (max 1024px) */
+@media (max-width: 1024px) {
+
+    .offer-container {
+        padding: 20px;
+        max-width: 90%;
+
+    }
+
+    .name-group {
+        gap: 10px; 
+    }
+
+    .form-group label {
+        font-size: 16px;
+
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .submit-button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

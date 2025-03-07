@@ -1,0 +1,80 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+   
+}
+
+html, body {
+    font-family: Arial, sans-serif;
+}
+
+
+
+.wrapper {
+    display: grid;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+}
+
+img{
+    margin-top: 100px;
+}
+
+.about-us {
+    width: 100%;
+    background-color: white;
+}
+
+    .about-us .about-us-pic {
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+        .about-us .about-us-pic img {
+            height: 300px;
+            width: 70%;
+        }
+
+
+.about-us-text {
+    padding: 80px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.about-us-container p {
+    font-size: large;
+}
+
+.about-us-container span {
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer-link {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+    .footer-link:hover {
+        text-decoration: underline;
+    }

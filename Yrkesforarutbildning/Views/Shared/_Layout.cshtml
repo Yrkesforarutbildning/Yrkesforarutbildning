@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Yrkesforarutbildning</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+ 
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a asp-controller="Home" asp-action="Index"><div class="logo"><h1>Yrkesförarutbildning</h1></div></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a asp-controller="Home" asp-action="Index">Hem</a></li>
+                    <li><a asp-controller="Product" asp-action="Services">Tjänster</a></li>
+                    <li><a asp-controller="Home" asp-action="AboutUs">Om oss</a></li>
+                    <li><a asp-controller="Home" asp-action="Contact">Kontakt</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+
+            <div class="mobile-menu">
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">Hem</a></li>
+                    <li><a asp-controller="Product" asp-action="Services">Tjänster</a></li>
+                    <li><a asp-controller="Home" asp-action="AboutUs">Om oss</a></li>
+                    <li><a asp-controller="Home" asp-action="Contact">Kontakt</a></li>
+                </ul>
+                <button class="close-menu">&times;</button>
+            </div>
+        </header>
+
+        <main>
+            @RenderBody()
+        </main>
+ 
+
+        
+     </div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

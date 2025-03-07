@@ -1,0 +1,11 @@
+@import 'Header/Header.css';
+@import 'Home/Home.css';
+@import 'AboutUs/AboutUs.css';
+@import 'Contact/Contact.css';
+@import 'Service/Service.css';
+@import 'Footer/Footer.css';
+
+@import 'AdminPortal/AdminPortal.css';
+@import 'AdminPortal/AdminLogin.css';
+@import 'Service/Offer.css';
+
