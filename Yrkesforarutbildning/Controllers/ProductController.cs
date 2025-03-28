@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Context;
 using Infrastructure.Entities;
+using Infrastructure.Migrations;
 using Microsoft.AspNetCore.Mvc;
 using Yrkesforarutbildning.Models;
 
@@ -24,6 +25,8 @@ public class ProductController : Controller
         return View();
     }
 
+
+
     [HttpGet]
     public IActionResult Offer(string? service)
     {
@@ -35,6 +38,7 @@ public class ProductController : Controller
         return View(model);
 
     }
+
 
     [HttpPost]
     public IActionResult Offer(OfferModel model)
@@ -48,6 +52,8 @@ public class ProductController : Controller
                 LastName = model.LastName,
                 OrgNumber = model.OrgNumber,
                 Address = model.Address,
+                ChooseDate = model.ChooseDate,
+                Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
                 CreatedAt = DateTime.UtcNow
 

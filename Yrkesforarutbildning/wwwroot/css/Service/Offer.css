@@ -6,6 +6,7 @@
     height: 130vh;
     padding: 40px 20px;
     background: linear-gradient(135deg, #007ACC, #00bcd4);
+
 }
 
 .offer-container {
@@ -16,7 +17,6 @@
     width: 100%;
     max-width: 600px;
     text-align: center;
-    
 }
 
     .offer-container h2 {
@@ -43,14 +43,14 @@
         font-weight: bold;
     }
 
-/* Namn och efternamn (höger om varandra) */
+
 .name-group {
     display: flex;
-    gap: 20px; /* Mellanrum mellan förnamn och efternamn */
+    gap: 20px;
 }
 
 .name-field {
-    flex: 1; /* Båda fälten tar lika mycket plats */
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 10px;
