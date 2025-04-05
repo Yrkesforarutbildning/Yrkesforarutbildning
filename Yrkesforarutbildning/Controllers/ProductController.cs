@@ -61,11 +61,16 @@ public class ProductController : Controller
 
             _context.Offers.Add(offerEntity);
             _context.SaveChanges();
-            return RedirectToAction("Index" , "Home");
+            return RedirectToAction("ConfirmOffer", "Product");
 
         }
         return View();
 
+    }
+
+    public IActionResult ConfirmOffer()
+    {
+        return View();
     }
 
 }

@@ -1,0 +1,113 @@
+﻿.confirm-wrapper {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.confirm-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.confirm-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #2ecc71;
+}
+
+.confirm-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.confirm-message {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.confirm-btn {
+    padding: 20px 40px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-top: 50px;
+    text-decoration: none;
+}
+
+    .confirm-btn:hover {
+        transform: translateY(-5px);
+        background: linear-gradient(90deg, #FFC300, #FF8C00);
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+.confirm-checkmark {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 0 auto 20px auto;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    border: 5px solid #2ecc71;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s ease-in-out forwards;
+}
+
+.checkmark {
+    width: 30px;
+    height: 60px;
+    border-left: 5px solid #2ecc71;
+    border-bottom: 5px solid #2ecc71;
+    transform: rotate(-45deg) scale(0);
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    animation: checkmark 0.4s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes checkmark {
+    to {
+        transform: rotate(-45deg) scale(1);
+    }
+}
+

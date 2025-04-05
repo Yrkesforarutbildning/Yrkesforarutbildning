@@ -70,13 +70,39 @@
     document.addEventListener("DOMContentLoaded", function () {
         const datePicker = document.getElementById("datePicker");
 
+        // Funktion för att kontrollera om datumet är en helg (lördag eller söndag)
+        function isWeekend(date) {
+            const day = date.getDay();
+            return day === 0 || day === 6; // 0 = söndag, 6 = lördag
+        }
+
+        // Funktion för att uppdatera minsta möjliga datum (inte helgdag eller 2 dagar innan)
         function updateMinDate() {
             let now = new Date();
-            now.setDate(now.getDate() + 1);
+            now.setDate(now.getDate() + 2); // Sätt minsta datum till 2 dagar framåt
+
+            // Hoppa över helger
+            while (isWeekend(now)) {
+                now.setDate(now.getDate() + 1);
+            }
+
             let minDate = now.toISOString().split("T")[0];
-            datePicker.setAttribute("min", minDate);
+            datePicker.setAttribute("min", minDate); // Sätt minsta till 2 dagar framåt
+        }
+
+        // Förhindra att användaren kan välja helgdagar eller datum mindre än 2 dagar framåt
+        function preventInvalidSelection(e) {
+            const selectedDate = new Date(e.target.value);
+            const today = new Date();
+            today.setDate(today.getDate() + 2); // Två dagar framåt från idag
+
+            if (isWeekend(selectedDate) || selectedDate < today) {
+                alert("Du kan inte boka en helgdag (lördag eller söndag) eller ett datum som är 24 timmar för nära i tiden. Vänligen välj ett giltigt datum.");
+                e.target.value = ""; // Rensa det felaktiga datumet
+            }
         }
 
         updateMinDate();
+        datePicker.addEventListener("change", preventInvalidSelection);
     });
 </script>
