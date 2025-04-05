@@ -19,6 +19,7 @@
                             <th>Adress</th>
                             <th>Telefon</th>
                             <th>E-post</th>
+                            <th>Skapades</th>
                             <th>Åtgärder</th>
                         </tr>
                     </thead>
@@ -34,10 +35,12 @@
                                 <td>@offer.Address</td>
                                 <td>@offer.PhoneNumber</td>
                                 <td>@offer.Email</td>
+                                <td>@offer.CreatedAt</td>
                                 <td>
-                                    <a asp-action="DeleteOffer" asp-controller="Admin" asp-route-id="@offer.Id" class="btn btn-danger">
-                                        Delete
-                                    </a>
+                                        <form asp-action="Delete" asp-controller="Admin" method="post" onsubmit="return confirm('Vill du verkligen ta bort denna bokning?');">
+                                            <input type="hidden" name="id" value="@offer.Id" />
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
                                 </td>
                         </tr>
                     }

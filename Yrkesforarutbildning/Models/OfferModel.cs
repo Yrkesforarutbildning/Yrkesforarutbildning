@@ -46,4 +46,6 @@ public class OfferModel
     [StringLength(20, ErrorMessage = "Telefonnummer får inte vara längre än 20 tecken")]
     [Display(Name = "Telefonnummer")]
     public string? PhoneNumber { get; set; }
+
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }

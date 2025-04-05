@@ -20,6 +20,7 @@ public class AdminController : Controller
         var offers = _context.Offers
         .Select(o => new OfferModel
         {
+            Id = o.Id,
             ChooseDate = o.ChooseDate,
             SelectedService = o.SelectedService,
             FirstName = o.FirstName,
@@ -27,6 +28,8 @@ public class AdminController : Controller
             Address = o.Address,
             PhoneNumber = o.PhoneNumber,
             Email = o.Email,
+            CreatedAt = o.CreatedAt,
+
 
         })
         .ToList(); 
@@ -37,21 +40,16 @@ public class AdminController : Controller
 
 
     [HttpPost]
-    [ValidateAntiForgeryToken] 
-    public IActionResult DeleteOffer(int id)
+    public IActionResult Delete(int id)
     {
-        
-        var offer = _context.Offers.Find(id);
-
-        if (offer == null)
+        var booking = _context.Offers.FirstOrDefault(x => x.Id == id);
+        if (booking != null)
         {
-            return NotFound();
+            _context.Offers.Remove(booking);
+            _context.SaveChanges();
         }
 
-        _context.Offers.Remove(offer);
-        _context.SaveChanges();
-
-        return RedirectToAction("Index");
+        return RedirectToAction("AdminPortal");
     }
 
     [Route("/AdminLogin")]
